@@ -52,7 +52,7 @@
     .disclaimer-bar { background-color: black; overflow: hidden; white-space: nowrap; margin-top: 20px; }
     .disclaimer-bar span { display: inline-block; padding: 10px 0; font-size: 0.85em; color: #ffe600; font-weight: bold; animation: scrollRightToLeft 18s linear infinite; }
 
-    #about-section, #safety-section { display: none; padding: 20px; background-color: #003300; border-top: 2px solid #ffe600; font-size: 1em; color: #fffbd1; line-height: 1.6; }
+    #about-section { display: none; padding: 20px; background-color: #003300; border-top: 2px solid #ffe600; font-size: 1em; color: #fffbd1; line-height: 1.6; }
 
     @keyframes scrollRightToLeft { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
     @keyframes unblurCycle { 0%, 30% { filter: blur(0); } 33%, 100% { filter: blur(5px); } }
@@ -86,7 +86,6 @@
   <div class="menu-bar">
     <button class="active" onclick="showSection('home')">Home</button>
     <button onclick="showSection('about')">About Us</button>
-    <button onclick="showSection('safety')">Safety Tips</button>
     <button onclick="window.open('https://t.me/officialhacker52', '_blank')">Telegram</button>
   </div>
 
@@ -140,10 +139,8 @@
     <h2 style="color: #ffe600;">About Us</h2>
     <p>At YONO GAMES, we specialize in developing high-quality mobile gaming apps that not only entertain but also reward users. Our mission is to blend fun with functionality, giving players an opportunity to earn real bonuses while enjoying their favorite games.</p>
     <p>We focus on modern web performance and mobile app SEO strategies to ensure visibility, fast load times, and user engagement. Our apps are designed with secure download links, attractive interfaces, and frequent updates.</p>
-  </div>
 
-  <div id="safety-section">
-    <h2 style="color: #ffe600;">सावधानी से खेलें</h2>
+    <h2 style="color: #ffe600; margin-top:20px;">सावधानी से खेलें</h2>
     <p>गेम खेलते समय हमेशा सतर्क रहें। पैसे का निवेश सोच-समझकर करें। योनो गेम्स किसी भी प्रकार के नुकसान के लिए जिम्मेदार नहीं है। खेल को मनोरंजन के रूप में लें और अपनी वित्तीय सीमाओं का ध्यान रखें।</p>
   </div>
 
@@ -155,13 +152,11 @@
     function showSection(section) {
       document.getElementById('home-section').style.display = section === 'home' ? 'block' : 'none';
       document.getElementById('about-section').style.display = section === 'about' ? 'block' : 'none';
-      document.getElementById('safety-section').style.display = section === 'safety' ? 'block' : 'none';
 
       const buttons = document.querySelectorAll('.menu-bar button');
       buttons.forEach(btn => btn.classList.remove('active'));
       if (section === 'home') buttons[0].classList.add('active');
       if (section === 'about') buttons[1].classList.add('active');
-      if (section === 'safety') buttons[2].classList.add('active');
     }
   </script>
 
