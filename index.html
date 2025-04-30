@@ -207,26 +207,51 @@
 
   <div id="home-section">
     <div class="app-container">
-      <!-- Repeat this block for each app -->
-      <div class="app-card">
-        <img src="teen_patti_master.jpg" alt="Teen Patti Master" />
-        <div class="app-name">Teen Patti Master</div>
-        <div>10M+ downloads | Bonus ₹40</div>
-        <div class="rating"><span class="stars">★★★★★</span> 4.8/5</div>
-        <a href="https://www.earntp.com/m/l34ii" class="app-download">Download</a>
-        <div class="comments">
-          <div class="comment-box"><strong>Amit:</strong> Best earning app, loved it!</div>
-          <div class="comment-box"><strong>Neha:</strong> Got my ₹40 bonus in 5 mins. Super!</div>
-          <div class="comment-box"><strong>Ravi:</strong> Smooth interface and fast payments.</div>
-        </div>
-      </div>
-      <!-- Add more app cards similarly as needed -->
-    </div>
+       <!-- New App Detail Section -->
+  <div id="app-details" style="display:none; padding: 20px; background-color: #004d00; border-top: 2px solid #ffe600;">
+    <h2 id="app-title" style="color: #ffe600;"></h2>
+    <p><strong>Rating:</strong> <span id="app-rating"></span></p>
+    <p><strong>Bonus:</strong> <span id="app-bonus"></span></p>
+    <a id="app-download-link" class="download" href="#" target="_blank">Download Now</a>
+  </div>
 
-    <div class="gallery">
-      <img src="gallery1.jpg" alt="Gallery 1">
-      <img src="gallery2.jpg" alt="Gallery 2">
-      <img src="gallery3.jpg" alt="Gallery 3">
+  <script>
+    const apps = [
+      {
+        title: "TEEN PATTI MASTER",
+        rating: 4.5,
+        bonus: "₹40",
+        link: "https://www.earntp.com/m/l34ii"
+      },
+      {
+        title: "SPIN CRUSH",
+        rating: 4.2,
+        bonus: "₹40",
+        link: "https://2shisgjsqawwhsagui7c.Safelyearnmillionsbysharingonepersonaqfxzqyfw.com?code=ADE7X99JX92&t=1745498414"
+      },
+      // Add remaining app objects...
+    ];
+
+    document.querySelectorAll('.app').forEach((el, idx) => {
+      el.addEventListener('click', () => {
+        const app = apps[idx];
+        document.getElementById('app-title').innerText = app.title;
+        document.getElementById('app-bonus').innerText = app.bonus;
+        document.getElementById('app-download-link').href = app.link;
+
+        const fullStars = Math.floor(app.rating);
+        const halfStar = app.rating % 1 >= 0.5 ? 1 : 0;
+        let starsHtml = '';
+        for (let i = 0; i < fullStars; i++) starsHtml += '⭐';
+        if (halfStar) starsHtml += '✮';
+        while (starsHtml.length < 5) starsHtml += '☆';
+        document.getElementById('app-rating').innerText = starsHtml + ` (${app.rating})`;
+
+        document.getElementById('app-details').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  </script>
     </div>
   </div>
 
