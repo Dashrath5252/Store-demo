@@ -1,75 +1,287 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>All Yono Games</title>
+  <meta name="description" content="Download top earning apps with signup bonus. Get instant ₹30–₹40 bonus and earn real cash!" />
+  <meta name="keywords" content="Teen Patti Master, Spin Crush, Yono Rummy, Jaiho Spin, Ind Bingo, Yono Arcade, Yono Slots, real cash apps, signup bonus apps" />
+  <meta name="author" content="Top Earning Apps Team" />
+  <title>Top Earning Apps - Download & Earn Bonus</title>
   <style>
-    body { margin: 0; font-family: Arial, sans-serif; background-color: #28a745; color: white; }
-    .header { text-align: center; padding: 20px; background-color: #003300; font-size: 2em; font-weight: bold; color: #ffe600; }
-    .notice-bar { background: #006400; padding: 10px; text-align: center; font-weight: bold; color: #ffe600; }
-    .menu-bar { display: flex; justify-content: center; background: black; padding: 10px; gap: 10px; }
-    .menu-bar button { padding: 10px 20px; background: #000; color: #ffe600; border: 2px solid #ffe600; border-radius: 10px; cursor: pointer; font-weight: bold; }
-    .menu-bar button.active { background-color: #ffe600; color: black; }.app-scroll, .gallery-scroll { overflow-x: auto; white-space: nowrap; padding: 10px; display: none; }
-.scroll-container, .gallery-container { display: inline-flex; gap: 12px; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #001100;
+      color: white;
+    }
+    header {
+      background-color: #003300;
+      padding: 10px 20px;
+      text-align: center;
+      border-bottom: 2px solid #ffe600;
+    }
+    header h1 {
+      margin: 0;
+      color: #ffe600;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #002200;
+      border-bottom: 1px solid #555;
+    }
+    nav a {
+      padding: 12px 20px;
+      text-decoration: none;
+      color: #fff;
+    }
+    nav a:hover {
+      background-color: #004400;
+    }
+    .hero {
+      padding: 30px 20px;
+      text-align: center;
+    }
+    .hero h2 {
+      color: #ffe600;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      padding: 20px;
+    }
+    .app-card {
+      background-color: #002200;
+      border: 2px solid #ffe600;
+      border-radius: 10px;
+      width: 150px;
+      padding: 10px;
+      text-align: center;
+    }
+    .app-card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 10px;
+      margin-bottom: 8px;
+    }
+    .app-card h3 {
+      font-size: 1em;
+      margin: 5px 0;
+      color: #ffe600;
+    }
+    .app-card p {
+      margin: 5px 0;
+      font-size: 0.9em;
+    }
+    .download {
+      display: inline-block;
+      background-color: #ffdd57;
+      color: black;
+      padding: 6px 12px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+    .about {
+      padding: 20px;
+      background-color: #002200;
+      margin: 20px;
+      border-radius: 10px;
+    }
+    .about h2 {
+      color: #ffe600;
+    }
 
-.app { background: #004d00; border-radius: 10px; padding: 10px; min-width: 180px; color: white; border: 2px solid #ffe600; box-shadow: 0 4px 8px rgba(0,0,0,0.5); cursor: pointer; }
-.app img { width: 100%; border-radius: 10px; }
-.app strong { color: #ffe600; display: block; margin: 5px 0; }
-.stars { color: gold; font-size: 1em; }
-
-.gallery-img { width: 120px; border-radius: 10px; filter: blur(5px); transition: filter 0.5s; }
-.gallery-img.center { filter: blur(0); transform: scale(1.05); }
-
-#app-details { padding: 20px; display: none; background: #003300; }
-#app-details h2 { color: #ffe600; }
-
-@media (max-width: 600px) {
-  .app { min-width: 140px; }
-}
-
+    /* Modal styles */
+    #appDetailModal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+    #appDetailModal .modal-content {
+      background-color: #003300;
+      border: 2px solid #ffe600;
+      border-radius: 20px;
+      padding: 20px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+    #appDetailModal img {
+      width: 80px;
+      height: 80px;
+      border-radius: 15px;
+      border: 2px solid white;
+      margin-bottom: 10px;
+    }
+    #appDetailModal h2 {
+      color: #ffe600;
+      margin: 10px 0 5px;
+    }
+    #appDetailModal .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 1.5em;
+      color: #ffe600;
+      cursor: pointer;
+    }
+    #modalAppDownloadLink {
+      display: inline-block;
+      background-color: #ffdd57;
+      color: black;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 1.1em;
+      margin-top: 10px;
+    }
+    #modalAppRating span {
+      font-size: 1.4em;
+      color: #ffd700;
+      margin: 0 2px;
+    }
   </style>
 </head>
 <body>
-  <div class="header">ALL YONO GAMES</div>
-  <div class="notice-bar">Join now and get instant bonus up to ₹40 on registration!</div>  <div class="menu-bar">
-    <button id="homeBtn" class="active" onclick="showSection('home')">Home</button>
-    <button onclick="showSection('about')">About Us</button>
-  </div>  <div id="home" class="app-scroll" style="display:block">
-    <div class="scroll-container">
-      <div class="app" onclick="showDetails('Teen Patti Master', 5, 'Get bonus ₹40 now!')">
-        <img src="teen_patti_master.jpg" alt="Teen Patti Master">
-        <strong>Teen Patti Master</strong>
-        <div class="stars">★★★★★</div>
-      </div>
-      <div class="app" onclick="showDetails('Spin Crush', 4, 'Bonus ₹40 and daily spins!')">
-        <img src="spin_crush.jpg" alt="Spin Crush">
-        <strong>Spin Crush</strong>
-        <div class="stars">★★★★</div>
-      </div>
-    </div>
-  </div>  <div id="gallery" class="gallery-scroll">
-    <div class="gallery-container">
-      <img src="gallery1.jpg" class="gallery-img" />
-      <img src="gallery2.jpg" class="gallery-img center" />
-      <img src="gallery3.jpg" class="gallery-img" />
-    </div>
-  </div>  <div id="about" style="display:none; padding:20px; background:#003300;">
-    <h2 style="color:#ffe600">About Us</h2>
-    <p>YONO GAMES offers exciting mobile games with real rewards. Play, win and enjoy!</p>
-  </div>  <div id="app-details"></div>  <script>
-    function showSection(id) {
-      document.querySelectorAll('.menu-bar button').forEach(btn => btn.classList.remove('active'));
-      document.getElementById('homeBtn').classList.toggle('active', id === 'home');
-      document.getElementById('home').style.display = id === 'home' ? 'block' : 'none';
-      document.getElementById('gallery').style.display = id === 'home' ? 'block' : 'none';
-      document.getElementById('about').style.display = id === 'about' ? 'block' : 'none';
-      document.getElementById('app-details').style.display = 'none';
+
+<header>
+  <h1>Top Earning Apps</h1>
+</header>
+
+<nav>
+  <a href="#apps">Apps</a>
+  <a href="#about">About</a>
+</nav>
+
+<section class="hero">
+  <h2>Install & Get Bonus Instantly!</h2>
+  <p>Earn ₹30 to ₹40 bonus just by signing up.</p>
+</section>
+
+<section id="apps" class="gallery">
+  <!-- Repeat for each app -->
+</section>
+
+<section id="about" class="about">
+  <h2>About These Apps</h2>
+  <p>These apps offer real signup bonuses and cash rewards. Share with friends and earn more. 100% verified and trusted!</p>
+</section>
+
+<!-- Modal -->
+<div id="appDetailModal">
+  <div class="modal-content">
+    <button class="close" onclick="closeAppDetail()">&times;</button>
+    <img id="modalAppImage" src="" alt="App Image">
+    <h2 id="modalAppName"></h2>
+    <p id="modalAppBonus"></p>
+    <div id="modalAppRating"></div>
+    <a id="modalAppDownloadLink" href="#" target="_blank">Download</a>
+  </div>
+</div>
+
+<script>
+  const appData = [
+    {
+      name: 'TEEN PATTI MASTER',
+      bonus: 'Bonus ₹40',
+      rating: 4,
+      image: 'teen_patti_master.jpg',
+      link: 'https://www.earntp.com/m/l34ii'
+    },
+    {
+      name: 'SPIN CRUSH',
+      bonus: 'Bonus ₹40',
+      rating: 5,
+      image: 'spin_crush.jpg',
+      link: 'https://2shisgjsqawwhsagui7c.Safelyearnmillionsbysharingonepersonaqfxzqyfw.com?code=ADE7X99JX92&t=1745498414'
+    },
+    {
+      name: 'YONO RUMMY',
+      bonus: 'Bonus ₹30',
+      rating: 3,
+      image: 'yono_rummy.jpg',
+      link: 'https://yonorummyg.com?code=TQJPFHAM2TH&t=1745498673'
+    },
+    {
+      name: 'JAIHO SPIN',
+      bonus: 'Bonus ₹25',
+      rating: 3,
+      image: 'jaiho_spin.jpg',
+      link: 'https://jaihospin4.com?code=7TA8XTHY3MN&t=1745498776'
+    },
+    {
+      name: 'IND BINGO',
+      bonus: 'Bonus ₹30',
+      rating: 4,
+      image: 'ind_bingo.jpg',
+      link: 'https://bingo91.vip?code=XU7QX913NFS&t=1745499112'
+    },
+    {
+      name: 'YONO ARCADE',
+      bonus: 'Bonus ₹40',
+      rating: 5,
+      image: 'yono_arcade.jpg',
+      link: 'https://yonoofficial.com?code=F559HGJK4UB&t=1745499305'
+    },
+    {
+      name: 'YONO SLOTS',
+      bonus: 'Bonus ₹30',
+      rating: 4,
+      image: 'yono_slots.jpg',
+      link: 'https://www.yonoslotsc.com?code=PJBN43T298M&t=1746011590'
+    }
+  ];
+
+  // Insert cards dynamically
+  const gallery = document.querySelector('.gallery');
+  appData.forEach((app, index) => {
+    const card = document.createElement('div');
+    card.className = 'app-card';
+    card.innerHTML = `
+      <img src="${app.image}" alt="${app.name}">
+      <h3>${app.name}</h3>
+      <p>${app.bonus}</p>
+      <a class="download" href="javascript:void(0);" onclick="openAppDetail(${index})">Download</a>
+    `;
+    gallery.appendChild(card);
+  });
+
+  function openAppDetail(index) {
+    const app = appData[index];
+    document.getElementById('modalAppImage').src = app.image;
+    document.getElementById('modalAppName').textContent = app.name;
+    document.getElementById('modalAppBonus').textContent = app.bonus;
+    document.getElementById('modalAppDownloadLink').href = app.link;
+
+    const ratingContainer = document.getElementById('modalAppRating');
+    ratingContainer.innerHTML = '';
+    for (let i = 1; i <= 5; i++) {
+      const star = document.createElement('span');
+      star.textContent = i <= app.rating ? '★' : '☆';
+      ratingContainer.appendChild(star);
     }
 
-    function showDetails(name, rating, desc) {
-      const stars = '★'.repeat(rating) + '☆'.repeat(5 - rating);
-      document.getElementById('app-details').innerHTML = `<h2>${name}</h2><div class='stars'>${stars}</div><p>${desc}</p>`;
-      document.getElementById('app-details').style.display = 'block';
-    }
-  </script></body>
+    document.getElementById('appDetailModal').style.display = 'flex';
+  }
+
+  function closeAppDetail() {
+    document.getElementById('appDetailModal').style.display = 'none';
+  }
+</script>
+
+</body>
 </html>
