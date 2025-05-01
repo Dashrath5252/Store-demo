@@ -370,21 +370,128 @@
       margin-bottom: 10px;
       color: #ffe600;
     }
-    .app-detail .stars {
-      color: gold;
-      font-size: 1.2em;
-      margin-bottom: 10px;
-    }
-    .app-detail .download {
-      display: inline-block;
-      margin-top: 10px;
-    }
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>All Yono Games - Download Now and Get Bonus Upto ₹500</title>
+  <meta name="description" content="Download All Yono Games now and grab your bonus upto ₹500 instantly. Play your favorite games and earn real rewards easily!" />
+  <meta name="keywords" content="YONO Games, gaming apps, Spin Crush, YONO Rummy, Jaiho Spin, Bingo, YONO Arcade, bonuses, download games, mobile gaming, earn money" />
+  <meta name="author" content="YONO GAMES" />
+  <meta property="og:title" content="All Yono Games - Download Now and Get Bonus Upto ₹500" />
+  <meta property="og:description" content="Download All Yono Games now and grab your bonus upto ₹500 instantly. Play your favorite games and earn real rewards easily!" />
+  <meta property="og:image" content="https://www.yonogamez.com/og.jpg" />
+  <meta property="og:url" content="https://www.yonogamez.com/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="All Yono Games - Download Now and Get Bonus Upto ₹500" />
+  <meta name="twitter:description" content="Download All Yono Games now and grab your bonus upto ₹500 instantly. Play your favorite games and earn real rewards easily!" />
+  <meta name="twitter:image" content="og.jpg" />
+  <meta name="google-site-verification" content="6PxxS1g-Mqz4I2VExJEnVG_Pv2Dnc09oO2VpCVeMiO4" />  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background-color: #28a745; font-family: 'Arial', sans-serif; color: white; }
+    .header { font-family: 'Archivo Black', sans-serif; font-size: 3em; text-align: center; padding: 20px; color: #ffe600; text-shadow: 2px 2px 5px black; }
+    .notice-bar, .disclaimer-bar { background-color: #006400; overflow: hidden; white-space: nowrap; padding: 10px; font-weight: bold; color: #ffe600; text-align: center; }
+    .menu-bar { background: black; display: flex; justify-content: center; gap: 10px; padding: 10px; }
+    .menu-bar button { background: transparent; border: 2px solid #ffe600; color: #ffe600; padding: 8px 16px; border-radius: 10px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+    .menu-bar button.active, .menu-bar button:hover { background: #ffe600; color: black; }
+    .search-bar { display: flex; justify-content: center; padding: 10px; }
+    .search-bar input { padding: 8px; border-radius: 10px; border: none; width: 80%; max-width: 400px; }
+    .app-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; padding: 10px; }
+    .app { background: #004d00; border: 2px solid #ffe600; border-radius: 12px; padding: 10px; width: 200px; text-align: center; cursor: pointer; }
+    .app img { width: 100%; border-radius: 10px; }
+    .app strong { display: block; color: #ffe600; margin-top: 10px; }
+    #app-details { display: none; background: #222; color: #fffbd1; padding: 20px; border-radius: 15px; margin: 20px auto; max-width: 400px; text-align: center; border: 2px solid #ffe600; }
+    #app-details img { width: 150px; border-radius: 12px; }
+    #app-details .rating { color: gold; margin: 10px 0; }
+    #app-details .bonus { color: #ffe600; font-weight: bold; }
+    #about-section { display: none; padding: 20px; background: #003300; color: #fffbd1; line-height: 1.6; }
   </style>
 </head>
-
 <body>
+  <div class="header">ALL YONO GAMES</div>
+  <div class="notice-bar">Join now and get instant bonus up to ₹40 on registration!</div>
+  <div class="menu-bar">
+    <button id="homeButton" class="active" onclick="showSection('home')">Home</button>
+    <button onclick="showSection('about')">About Us</button>
+    <button onclick="window.open('https://t.me/officialhacker52', '_blank')">Telegram</button>
+  </div>
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search for a game..." onkeyup="searchApps()">
+  </div>  <div id="home-section">
+    <div class="app-container" id="appList"></div>
+    <div id="app-details"></div>
+  </div>  <div id="about-section">
+    <h2 style="color: #ffe600;">About Us</h2>
+    <p>At YONO GAMES, we are passionate about creating high-quality mobile gaming experiences that not only entertain but also reward our players...</p>
+    <p>We focus on developing a diverse portfolio of games that cater to different tastes...</p>
+    <p>Our games are optimized for a variety of devices...</p>
+    <p>At YONO GAMES, we are also committed to offering the best customer service...</p>
+    <h2 style="color: #ffe600; margin-top:20px;">सावधानी से खेलें</h2>
+    <p>गेम खेलते समय हमेशा सतर्क रहें...</p>
+  </div>  <div class="disclaimer-bar">© 2025 YONO GAMES. All Rights Reserved.</div>  <script>
+    const apps = [
+      { name: "Teen Patti Master", bonus: "₹40", downloads: "10M+", rating: 4.5, image: "teen_patti_master.jpg", link: "https://www.earntp.com/m/l34ii", description: "Enjoy Teen Patti with exciting features and real bonuses!" },
+      { name: "Spin Crush", bonus: "₹40", downloads: "10M+", rating: 4.2, image: "spin_crush.jpg", link: "https://2shisgjsqawwhsagui7c.Safelyearnmillionsbysharingonepersonaqfxzqyfw.com?code=ADE7X99JX92&t=1745498414", description: "Spin and win daily rewards in this colorful arcade game!" },
+      { name: "YONO Rummy", bonus: "₹30", downloads: "10M+", rating: 4.3, image: "yono_rummy.jpg", link: "https://yonorummyg.com?code=TQJPFHAM2TH&t=1745498673", description: "Classic rummy with real cash prizes and secure gameplay." },
+      { name: "Jaiho Spin", bonus: "₹25", downloads: "10M+", rating: 4.1, image: "jaiho_spin.jpg", link: "https://jaihospin4.com?code=7TA8XTHY3MN&t=1745498776", description: "Fun-filled spinning game with huge bonuses daily." },
+      { name: "IND Bingo", bonus: "₹30", downloads: "10M+", rating: 4.4, image: "ind_bingo.jpg", link: "https://bingo91.vip?code=XU7QX913NFS&t=1745499112", description: "Play Bingo, challenge others and win exciting prizes!" },
+      { name: "YONO Arcade", bonus: "₹40", downloads: "10M+", rating: 4.6, image: "yono_arcade.jpg", link: "https://yonoofficial.com?code=F559HGJK4UB&t=1745499305", description: "One stop for multiple games with consistent earnings." },
+      { name: "YONO Slots", bonus: "₹30", downloads: "10M+", rating: 4.2, image: "yono_slots.jpg", link: "https://www.yonoslotsc.com?code=PJBN43T298M&t=1746011590", description: "Enjoy exciting slots and earn daily with luck!" },
+    ];
 
-  <div class="header">
-    <div style="display: flex; flex-direction: column; align-items: flex-start;">
-      <span class="line1">ALL</span>
-      <span class0
+    function showApps() {
+      const container = document.getElementById('appList');
+      container.innerHTML = '';
+      apps.forEach((app, index) => {
+        const div = document.createElement('div');
+        div.className = 'app';
+        div.innerHTML = `<img src="${app.image}" alt="${app.name}"><strong>${app.name}</strong>`;
+        div.onclick = () => showAppDetails(index);
+        container.appendChild(div);
+      });
+    }
+
+    function showAppDetails(index) {
+      const app = apps[index];
+      const details = document.getElementById('app-details');
+      details.style.display = 'block';
+      details.innerHTML = `
+        <img src="${app.image}" alt="${app.name}">
+        <h3>${app.name}</h3>
+        <div class="rating">${'★'.repeat(Math.floor(app.rating))}${app.rating % 1 >= 0.5 ? '½' : ''}</div>
+        <p><strong>Downloads:</strong> ${app.downloads}</p>
+        <p class="bonus">Bonus: ${app.bonus}</p>
+        <p>${app.description}</p>
+        <a class="download" href="${app.link}" target="_blank">Download Now</a>
+      `;
+      window.scrollTo({ top: details.offsetTop - 50, behavior: 'smooth' });
+    }
+
+    function searchApps() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      const filteredApps = apps.filter(app => app.name.toLowerCase().includes(query));
+      const container = document.getElementById('appList');
+      container.innerHTML = '';
+      filteredApps.forEach((app, index) => {
+        const div = document.createElement('div');
+        div.className = 'app';
+        div.innerHTML = `<img src="${app.image}" alt="${app.name}"><strong>${app.name}</strong>`;
+        div.onclick = () => showAppDetails(index);
+        container.appendChild(div);
+      });
+    }
+
+    function showSection(section) {
+      document.getElementById('home-section').style.display = (section === 'home') ? 'block' : 'none';
+      document.getElementById('about-section').style.display = (section === 'about') ? 'block' : 'none';
+      const buttons = document.querySelectorAll('.menu-bar button');
+      buttons.forEach(button => button.classList.remove('active'));
+      if (section === 'home') document.getElementById('homeButton').classList.add('active');
+    }
+
+    window.onload = showApps;
+  </script></body>
+</html>
