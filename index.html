@@ -1,77 +1,101 @@
 <!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Join YONO GAMES and earn real rewards through exciting mobile games like Teen Patti Master, Spin Crush, and more.">
-  <meta name="keywords" content="YONO Games, Teen Patti, Spin Crush, Mobile Games, Earn Rewards">
-  <meta name="author" content="YONO GAMES">
-  <title>ALL YONO GAMES</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>All Yono Games - Download Now and Get Bonus Upto ₹500</title>
+  <meta name="description" content="Download All Yono Games now and grab your bonus upto ₹500 instantly. Play your favorite games and earn real rewards easily!" />
+  <meta name="keywords" content="YONO Games, gaming apps, Spin Crush, YONO Rummy, Jaiho Spin, Bingo, YONO Arcade, bonuses, download games, mobile gaming, earn money,jaiho 777,Yono 777,Mkm Bet,Neta Vip,Spin 777,Yono Arcade,Yono Vip,Best earning apps, Online earning apps,paisa kaise kamaye,Free Earn Games, Earning games" />
+  <meta name="author" content="YONO GAMES" />
+  <meta name="google-site-verification" content="6PxxS1g-Mqz4I2VExJEnVG_Pv2Dnc09oO2VpCVeMiO4" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LDKBV43X40"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LDKBV43X40');
+  </script>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
-    header, nav, .app, .gallery { margin: 20px; }
-    header { text-align: center; font-size: 24px; font-weight: bold; background: #ffc107; padding: 15px; }
-    nav { display: flex; justify-content: center; gap: 20px; background: #fff; padding: 10px 0; }
-    nav a { text-decoration: none; color: #333; font-weight: bold; }
-    .app { background: #fff; padding: 10px; border-radius: 8px; display: flex; align-items: center; gap: 15px; margin-bottom: 10px; cursor: pointer; }
-    .app img { width: 80px; height: 80px; border-radius: 10px; }
-    .app-info { flex-grow: 1; }
-    .download { background: #28a745; color: white; padding: 5px 10px; border-radius: 5px; text-decoration: none; }
-    .details { display: none; margin: 20px; background: #fff; padding: 15px; border-radius: 8px; }
-    .gallery img { width: 30%; margin: 1%; border-radius: 10px; }
-    .active { display: block; }
+    body { background-color: #28a745; color: white; font-family: Arial, sans-serif; margin: 0; }
+    .header, .menu-bar, .notice-bar, .app-container, .modal, .gallery, .disclaimer-bar { padding: 10px; }
+    .header { font-size: 3em; text-align: center; font-weight: bold; text-shadow: 1px 1px 2px black; }
+    .notice-bar, .disclaimer-bar { background: #006400; color: #ffe600; font-weight: bold; overflow: hidden; white-space: nowrap; animation: scrollRightToLeft 15s linear infinite; }
+    .menu-bar { display: flex; background: black; gap: 10px; justify-content: center; }
+    .menu-bar button { background: transparent; color: #ffe600; border: 2px solid #ffe600; padding: 8px 16px; border-radius: 8px; cursor: pointer; }
+    .menu-bar .active { background: #ffe600; color: black; }
+    .app-container { display: flex; flex-direction: column; gap: 10px; }
+    .app { background: #004d00; border: 2px solid #ffe600; border-radius: 10px; display: flex; align-items: center; padding: 10px; cursor: pointer; }
+    .app img { width: 60px; height: 60px; border-radius: 10px; border: 2px solid white; }
+    .app-info { flex: 1; padding-left: 10px; }
+    .modal { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%); background: green; border: 4px solid yellow; padding: 20px; z-index: 1000; border-radius: 10px; text-align: center; color: #fff; width: 300px; }
+    .modal img { width: 80px; height: 80px; border-radius: 10px; margin-bottom: 10px; }
+    .modal .stars { margin: 10px 0; }
+    .modal .stars span { color: gold; font-size: 1.2em; }
+    .modal .downloads { margin: 5px 0; font-size: 0.9em; }
+    .modal .download-btn { background: yellow; color: black; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 10px; }
+    .overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 999; }
+    @keyframes scrollRightToLeft { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
   </style>
 </head>
 <body>
-  <header>ALL YONO GAMES</header>
-  <nav>
-    <a href="#" onclick="showSection('home')">Home</a>
-    <a href="#" onclick="showSection('about')">About Us</a>
-    <a href="https://t.me/yourchannel" target="_blank">Telegram</a>
-  </nav>  <div id="home">
-    <div class="app" onclick="showDetails('teenPatti')">
+  <div class="header">ALL YONO GAMES</div>
+  <div class="notice-bar"><span>Join now and get instant bonus up to ₹40 on registration!</span></div>
+  <div class="menu-bar">
+    <button class="active" onclick="showSection('home')">Home</button>
+    <button onclick="showSection('about')">About Us</button>
+  </div>
+  <div id="home-section" class="app-container">
+    <div class="app" onclick="showModal('Teen Patti Master','teen_patti_master.jpg',5,'10M+','https://www.earntp.com/m/l34ii')">
       <img src="teen_patti_master.jpg" alt="Teen Patti Master">
-      <div class="app-info"><strong>TEEN PATTI MASTER</strong><br>10M+ | Bonus ₹40</div>
-      <a class="download" href="https://www.earntp.com/m/l34ii">Download</a>
+      <div class="app-info"><strong>Teen Patti Master</strong><br>10M+ Downloads</div>
     </div>
-    <div class="app" onclick="showDetails('spinCrush')">
+    <div class="app" onclick="showModal('Spin Crush','spin_crush.jpg',4,'10M+','https://2shisgjsqawwhsagui7c.Safelyearnmillionsbysharingonepersonaqfxzqyfw.com?code=ADE7X99JX92&t=1745498414')">
       <img src="spin_crush.jpg" alt="Spin Crush">
-      <div class="app-info"><strong>SPIN CRUSH</strong><br>10M+ | Bonus ₹40</div>
-      <a class="download" href="https://2shisgjsqawwhsagui7c.Safelyearnmillionsbysharingonepersonaqfxzqyfw.com?code=ADE7X99JX92&t=1745498414">Download</a>
+      <div class="app-info"><strong>Spin Crush</strong><br>10M+ Downloads</div>
     </div>
-    <!-- Repeat similar structure for other apps -->
-  </div>  <div id="about" class="details">
-    <h2>About Us</h2>
-    <p>At YONO GAMES, we are passionate about creating high-quality mobile gaming experiences that not only entertain but also reward our players. Our mission is to revolutionize the mobile gaming space by combining thrilling gameplay with opportunities for users to earn real rewards.</p>
-    <p>We focus on developing a diverse portfolio of games that cater to different tastes, including popular options like <strong>YONO RUMMY</strong>, <strong>Spin Crush</strong>, and <strong>Jaiho Spin</strong>. Our games are designed to be easy to play, but challenging enough to keep players coming back for more.</p>
-    <p>Our games are optimized for a variety of devices, ensuring a quality experience across smartphones and tablets. We update our games regularly with new features, challenges, and rewards to keep the gaming experience fresh and exciting.</p>
-    <p>We also offer the best customer service. Our team is dedicated to answering questions, resolving issues, and ensuring that every player’s experience is smooth and enjoyable.</p>
-    <p>Thank you for choosing YONO GAMES!</p>
-    <h3>सावधानी से खेलें</h3>
-    <p>गेम खेलते समय हमेशा सतर्क रहें। पैसे का निवेश सोच-समझकर करें। योनो गेम्स किसी भी प्रकार के नुकसान के लिए जिम्मेदार नहीं है। खेल को मनोरंजन के रूप में लें और अपनी वित्तीय सीमाओं का ध्यान रखें।</p>
-  </div>  <div class="gallery">
-    <img src="gallery1.jpg" alt="Gallery 1">
-    <img src="gallery2.jpg" alt="Gallery 2">
-    <img src="gallery3.jpg" alt="Gallery 3">
-  </div>  <div id="appDetails" class="details"></div>  <script>
+    <div class="app" onclick="showModal('Yono Rummy','yono_rummy.jpg',3,'10M+','https://yonorummyg.com?code=TQJPFHAM2TH&t=1745498673')">
+      <img src="yono_rummy.jpg" alt="Yono Rummy">
+      <div class="app-info"><strong>Yono Rummy</strong><br>10M+ Downloads</div>
+    </div>
+  </div>
+  <div id="about-section" style="display:none; padding:20px; color:white; background:#003300;">
+    <h2 style="color:#ffe600;">About Us</h2>
+    <p>YONO GAMES brings fun and rewards together. Enjoy popular games like Spin Crush, Teen Patti Master, and Yono Rummy. Earn bonuses and real rewards while playing!</p>
+    <h3 style="color:#ffe600; margin-top:20px;">सावधानी से खेलें</h3>
+    <p>गेम खेलते समय सतर्क रहें, पैसे की जानकारी सोच-समझकार करें, और आनंदिक हेतु नहीं हैं!</p>
+  </div>
+  <div class="overlay" onclick="closeModal()"></div>
+  <div class="modal" id="modalBox">
+    <img id="modalImg" src="" alt="App Image">
+    <div id="modalName" style="font-size:1.2em; font-weight:bold;"></div>
+    <div class="stars" id="modalStars"></div>
+    <div class="downloads" id="modalDownloads"></div>
+    <a href="#" target="_blank" class="download-btn" id="modalLink">Download</a>
+  </div>
+  <script>
     function showSection(id) {
-      document.getElementById('home').style.display = (id === 'home') ? 'block' : 'none';
-      document.getElementById('about').style.display = (id === 'about') ? 'block' : 'none';
-      document.getElementById('appDetails').style.display = 'none';
+      document.getElementById('home-section').style.display = id === 'home' ? 'block' : 'none';
+      document.getElementById('about-section').style.display = id === 'about' ? 'block' : 'none';
+      document.querySelectorAll('.menu-bar button').forEach(btn => btn.classList.remove('active'));
+      document.querySelector(`.menu-bar button[onclick*='${id}']`).classList.add('active');
     }
-
-    function showDetails(appName) {
-      const details = {
-        teenPatti: '<h2>Teen Patti Master</h2><img src="teen_patti_master.jpg" width="150"><p>Rating: 4.5/5</p><p>Over 10 million downloads. Play classic Teen Patti and earn rewards instantly!</p>',
-        spinCrush: '<h2>Spin Crush</h2><img src="spin_crush.jpg" width="150"><p>Rating: 4.3/5</p><p>Spin and win real rewards in this thrilling game!</p>'
-        // Add more apps details here
-      };
-      document.getElementById('home').style.display = 'none';
-      document.getElementById('about').style.display = 'none';
-      document.getElementById('appDetails').innerHTML = details[appName] || 'Details not found.';
-      document.getElementById('appDetails').style.display = 'block';
+    function showModal(name, img, rating, downloads, link) {
+      document.getElementById('modalName').innerText = name;
+      document.getElementById('modalImg').src = img;
+      document.getElementById('modalDownloads').innerText = downloads + ' Downloads';
+      document.getElementById('modalLink').href = link;
+      const starsContainer = document.getElementById('modalStars');
+      starsContainer.innerHTML = '';
+      for (let i = 1; i <= 5; i++) {
+        starsContainer.innerHTML += `<span>${i <= rating ? '★' : '☆'}</span>`;
+      }
+      document.querySelector('.overlay').style.display = 'block';
+      document.getElementById('modalBox').style.display = 'block';
     }
-
-    // Show Home by default
-    showSection('home');
-  </script></body>
+    function closeModal() {
+      document.querySelector('.overlay').style.display = 'none';
+      document.getElementById('modalBox').style.display = 'none';
+    }
+    window.onload = () => showSection('home');
+  </script>
+</body>
 </html>
