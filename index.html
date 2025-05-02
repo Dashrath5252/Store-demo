@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LDKBV43X40"></script>
 <script>
@@ -45,8 +44,9 @@
   "description": "Download All Yono Games and get bonus up to ₹500 instantly!",
   "image": "https://www.yonogamez.com/og.jpg"
 }
-</script>
   <!-- CSS Styling -->
+  <style>
+    <!-- CSS Styling -->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
@@ -62,38 +62,10 @@
     .notice-bar { background-color: #006400; overflow: hidden; white-space: nowrap; }
     .notice-bar span { display: inline-block; padding: 10px 0; font-size: 0.90em; color: #ffe600; font-weight: bold; animation: scrollRightToLeft 18s linear infinite; }
 
-.menu-bar {
-  background-color: black;
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-  gap: 10px;
-  border-top: 3px solid #ffe600;
-  border-bottom: 3px solid #ffe600;
-}
+    .menu-bar { background-color: black; display: flex; justify-content: center; padding: 10px; gap: 10px; }
+    .menu-bar button { flex: 1; max-width: 150px; background: transparent; border: 2px solid #ffe600; color: #ffe600; padding: 8px 16px; border-radius: 10px; font-weight: bold; font-size: 1em; cursor: pointer; transition: 0.3s; }
+    .menu-bar button:hover, .menu-bar button.active { background-color: #ffe600; color: black; }
 
-.menu-bar button {
-  flex: 1;
-  max-width: 150px;
-  background-color: #222; /* Solid background for box effect */
-  border: 2px solid #ffe600;
-  color: #ffe600;
-  padding: 10px 16px;
-  border-radius: 12px;
-  font-weight: bold;
-  font-size: 1em;
-  cursor: pointer;
-  transition: 0.3s;
-  box-shadow: 2px 2px 8px rgba(255, 230, 0, 0.4);
-}
-
-.menu-bar button:hover,
-.menu-bar button.active {
-  background-color: #ffe600;
-  color: black;
-  transform: scale(1.05);
-  box-shadow: 0 0 10px yellow;
-}
     .app-container, .gallery { transition: all 0.5s ease; }
     .app-container { display: flex; flex-direction: column; gap: 12px; padding: 10px; }
     .app { background-color: #004d00; border-radius: 15px; padding: 10px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 10px rgba(0,0,0,0.4); border: 2px solid #ffe600; flex-wrap: wrap; }
@@ -132,9 +104,76 @@ button, button:focus, button:active {
   border: none !important;
   -webkit-tap-highlight-color: transparent !important;
 }
-    
+    /* Add modal styles */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal {
+      background-color: #003300;
+      border: 2px solid #ffe600;
+      border-radius: 15px;
+      padding: 20px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 0 20px black;
+      position: relative;
+    }
+
+    .modal img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 2px solid white;
+      margin-bottom: 10px;
+    }
+
+    .modal h3 {
+      margin: 10px 0 5px;
+      color: #ffe600;
+      font-size: 1.4em;
+    }
+
+    .modal p {
+      margin: 5px 0;
+    }
+
+    .star-rating {
+      color: gold;
+      font-size: 1.2em;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      font-size: 1.4em;
+      color: white;
+      cursor: pointer;
+    }
+
+    .real-download {
+      margin-top: 15px;
+      background-color: #ffdd57;
+      color: black;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+    }
   </style>
 </head>
+<body>
 
 <body>
 
@@ -210,7 +249,60 @@ button, button:focus, button:active {
     </div>
   </div>
 
-  <div id="about-section">
+<div class="app-container">
+  <!-- Example App (Repeat same for others with adjusted data) -->
+  <div class="app">
+    <img src="teen_patti_master.jpg" alt="Teen Patti Master">
+    <div class="app-info"><strong>TEEN PATTI MASTER</strong>10M+ | Bonus ₹40</div>
+    <a class="download" href="#" onclick="openModal('Teen Patti Master', 'teen_patti_master.jpg', '10M+', '₹40', 4, 'https://www.earntp.com/m/l34ii')">Download</a>
+  </div>
+
+  <div class="app">
+    <img src="spin_crush.jpg" alt="Spin Crush">
+    <div class="app-info"><strong>SPIN CRUSH</strong>10M+ | Bonus ₹40</div>
+    <a class="download" href="#" onclick="openModal('Spin Crush', 'spin_crush.jpg', '10M+', '₹40', 5, 'https://2shisgjsqawwhsagui7c.Safelyearnmillionsbysharingonepersonaqfxzqyfw.com?code=ADE7X99JX92&t=1745498414')">Download</a>
+  </div>
+
+  <!-- Add rest of apps similarly with relevant arguments -->
+</div>
+
+<!-- Modal (only one used for all apps) -->
+<div class="modal-overlay" id="appModal">
+  <div class="modal">
+    <span class="close-btn" onclick="closeModal()">×</span>
+    <img id="modalImg" src="" alt="App Image">
+    <h3 id="modalName"></h3>
+    <p><strong>Downloads:</strong> <span id="modalDownloads"></span></p>
+    <p><strong>Bonus:</strong> <span id="modalBonus"></span></p>
+    <p><strong>Rating:</strong> <span class="star-rating" id="modalRating"></span></p>
+    <a id="modalLink" class="real-download" href="#" target="_blank">Download Now</a>
+  </div>
+</div>
+
+<script>
+  function openModal(name, img, downloads, bonus, rating, link) {
+    document.getElementById('modalName').textContent = name;
+    document.getElementById('modalImg').src = img;
+    document.getElementById('modalDownloads').textContent = downloads;
+    document.getElementById('modalBonus').textContent = bonus;
+
+    // Show stars
+    const starContainer = document.getElementById('modalRating');
+    starContainer.innerHTML = '';
+    for (let i = 1; i <= 5; i++) {
+      starContainer.innerHTML += i <= rating ? '★' : '☆';
+    }
+
+    document.getElementById('modalLink').href = link;
+    document.getElementById('appModal').style.display = 'flex';
+  }
+
+  function closeModal() {
+    document.getElementById('appModal').style.display = 'none';
+  }
+</script>
+
+<div id="about-section">
     <h2 style="color: #ffe600;">About Us</h2>
     <p>At YONO GAMES, we are passionate about creating high-quality mobile gaming experiences that not only entertain but also reward our players. Our mission is to revolutionize the mobile gaming space by combining thrilling gameplay with opportunities for users to earn real rewards. Whether you're playing a quick round of cards, engaging in a fun arcade game, or spinning the wheel for a big win, we aim to provide a seamless, enjoyable, and rewarding experience.</p>
     <br>
@@ -226,8 +318,7 @@ button, button:focus, button:active {
     <br>
     <p>गेम खेलते समय हमेशा सतर्क रहें। पैसे का निवेश सोच-समझकर करें। योनो गेम्स किसी भी प्रकार के नुकसान के लिए जिम्मेदार नहीं है। खेल को मनोरंजन के रूप में लें और अपनी वित्तीय सीमाओं का ध्यान रखें।</p>
   </div>
-
-  <script>
+ <script>
     function showSection(section) {
       document.getElementById('home-section').style.display = (section === 'home') ? 'block' : 'none';
       document.getElementById('about-section').style.display = (section === 'about') ? 'block' : 'none';
@@ -244,5 +335,6 @@ button, button:focus, button:active {
       showSection('home');
     };
   </script>
+
 </body>
 </html>
