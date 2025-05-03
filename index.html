@@ -174,29 +174,219 @@
       <p id="popup-bonus">Bonus: ₹<span id="popup-bonus-amount">0</span></p>
       <p id="popup-downloads">Downloads: <span id="popup-download-count">0</span></p>
       <a id="popup-download" class="popup-download" href="#" target="_blank">Download Now</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>All Yono Games - Download Now and Get Bonus Upto ₹500</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #28a745;
+      font-family: 'Arial', sans-serif;
+      color: white;
+    }
+
+    .header {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 3em;
+      font-weight: bold;
+      text-align: center;
+      padding: 20px 10px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-shadow: 2px 2px 5px black, 0 0 25px yellow, 0 0 5px darkgoldenrod;
+    }
+
+    .header .line1, .header .line2, .header .line3 {
+      color: #ffe600;
+      margin: 0;
+    }
+
+    .line1 { margin-left: 30px; }
+    .line2 { margin-left: 100px; }
+    .line3 { margin-left: 200px; }
+
+    .notice-bar {
+      background-color: #006400;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .notice-bar span {
+      display: inline-block;
+      padding: 10px 0;
+      font-size: 0.90em;
+      color: #ffe600;
+      font-weight: bold;
+      animation: scrollRightToLeft 18s linear infinite;
+    }
+
+    .menu-bar {
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      gap: 10px;
+      border-top: 3px solid #ffe600;
+      border-bottom: 3px solid #ffe600;
+    }
+
+    .menu-bar button {
+      flex: 1;
+      max-width: 150px;
+      background-color: #222;
+      border: 2px solid #ffe600;
+      color: #ffe600;
+      height: 60px;
+      font-weight: bold;
+      font-size: 1em;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 2px 2px 8px rgba(255, 230, 0, 0.4);
+      border-radius: 0;
+    }
+
+    .menu-bar button:hover,
+    .menu-bar button.active {
+      background-color: #ffe600;
+      color: black;
+      transform: scale(1.05);
+      box-shadow: 0 0 10px yellow;
+    }
+
+    .menu-bar button:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    .app-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 10px;
+      justify-content: center;
+    }
+
+    .app {
+      background-color: #004d00;
+      border-radius: 15px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      border: 2px solid #ffe600;
+      flex-wrap: wrap;
+      width: 100%;
+      max-width: 320px;
+      margin: 10px;
+    }
+
+    .app img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 2px solid #fff;
+    }
+
+    .app-info {
+      flex: 1;
+      padding: 0 10px;
+      font-size: 0.9em;
+      text-align: center;
+    }
+
+    .app-info strong {
+      font-size: 1em;
+      display: block;
+      color: #ffe600;
+    }
+
+    .fake-download {
+      display: inline-block;
+      background-color: #ffe600;
+      color: black;
+      padding: 8px 16px;
+      font-weight: bold;
+      border-radius: 8px;
+      font-size: 0.9em;
+      box-shadow: 1px 1px 5px rgba(255, 255, 0, 0.6);
+    }
+
+    @keyframes scrollRightToLeft {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <div style="display: flex; flex-direction: column; align-items: flex-start;">
+      <span class="line1">ALL</span>
+      <span class="line2">YONO</span>
+      <span class="line3">GAMES</span>
     </div>
   </div>
 
+  <div class="notice-bar">
+    <span>Join now and get instant bonus up to ₹40 on registration!</span>
+  </div>
+
+  <div class="menu-bar">
+    <button id="homeButton" class="active" onclick="showSection('home')">Home</button>
+    <button onclick="showSection('about')">About Us</button>
+    <button onclick="window.open('https://t.me/officialhacker52', '_blank')">Telegram</button>
+  </div>
+
+  <div id="home-section">
+    <div class="app-container">
+      <div class="app">
+        <img src="spin_crush.jpg" alt="Spin Crush">
+        <div class="app-info"><strong>SPIN CRUSH</strong>10M+ | Bonus ₹40</div>
+        <span class="fake-download">Download</span>
+      </div>
+
+      <div class="app">
+        <img src="teen_patti_master.jpg" alt="Teen Patti Master">
+        <div class="app-info"><strong>TEEN PATTI MASTER</strong>10M+ | Bonus ₹40</div>
+        <span class="fake-download">Download</span>
+      </div>
+
+      <div class="app">
+        <img src="yono_rummy.jpg" alt="YONO RUMMY">
+        <div class="app-info"><strong>YONO RUMMY</strong>10M+ | Bonus ₹30</div>
+        <span class="fake-download">Download</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="about-section" style="display:none; padding: 20px; background-color: #003300; color: #fffbd1;">
+    <h2 style="color: #ffe600;">About Us</h2>
+    <p>We are a collection of the best games to earn money while playing. Download our apps and start earning rewards instantly.</p>
+  </div>
+
   <script>
-    function showPopup(app) {
-      // Set popup content dynamically
-      document.getElementById('popup-img').src = app.img;
-      document.getElementById('popup-title').innerText = app.name;
-      document.getElementById('popup-stars').innerText = '★'.repeat(Math.round(app.rating)) + '☆'.repeat(5 - Math.round(app.rating));
-      document.getElementById('popup-bonus-amount').innerText = app.bonus;
-      document.getElementById('popup-download-count').innerText = app.downloads;
-      document.getElementById('popup-download').href = app.link;
+    function showSection(id) {
+      document.getElementById('home-section').style.display = id === 'home' ? 'block' : 'none';
+      document.getElementById('about-section').style.display = id === 'about' ? 'block' : 'none';
 
-      // Show the popup
-      document.getElementById('popup-overlay').style.display = 'flex';
+      document.querySelectorAll('.menu-bar button').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
     }
-
-    // Close the popup when clicked outside
-    document.getElementById('popup-overlay').addEventListener('click', function(e) {
-      if (e.target === document.getElementById('popup-overlay')) {
-        document.getElementById('popup-overlay').style.display = 'none';
-      }
-    });
   </script>
 </body>
 </html>
