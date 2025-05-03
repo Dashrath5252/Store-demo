@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+⁶<!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -236,6 +236,24 @@ button, button:focus, button:active {
       buttons.forEach(button => button.classList.remove('active'));
       if (section === 'home') {
         document.getElementById('homeButton').classList.add('active');
+        function showSection(section) {
+  document.getElementById('home-section').style.display = (section === 'home') ? 'block' : 'none';
+  document.getElementById('about-section').style.display = (section === 'about') ? 'block' : 'none';
+
+  const buttons = document.querySelectorAll('.menu-bar button');
+  buttons.forEach(button => button.classList.remove('active'));
+
+  if (section === 'home') {
+    document.getElementById('homeButton').classList.add('active');
+  } else if (section === 'about') {
+    // Yeh code About Us button ko active banayega
+    buttons.forEach(button => {
+      if (button.textContent.trim() === 'About Us') {
+        button.classList.add('active');
+      }
+    });
+  }
+        }
       }
     }
 
