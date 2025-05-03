@@ -220,50 +220,10 @@ button, button:focus, button:active {
   <div id="home-section">
     <div class="app-container">
       
-<div class="app" onclick="showPopup({ img: 'spin_crush.jpg', name: 'SPIN CRUSH', rating: 4.6, bonus: 40, downloads: '10M+', link: 'https://2shisgjsqawwhsagui7c.Safelyearnmillionsbysharingonepersonaqfxzqyfw.com?code=ADE7X99JX92&t=1745498414' })">
-  <img src="spin_crush.jpg" alt="Spin Crush">
-  <h3>SPIN CRUSH</h3>
-  <p>Get ₹40 Bonus</p>
-</div>
 
-<div class="app" onclick="showPopup({ img: 'teen_patti_master.jpg', name: 'TEEN PATTI MASTER', rating: 4.3, bonus: 40, downloads: '10M+', link: 'https://www.earntp.com/m/l34ii' })">
-  <img src="teen_patti_master.jpg" alt="Teen Patti Master">
-  <h3>TEEN PATTI MASTER</h3>
-  <p>Get ₹40 Bonus</p>
-</div>
-
-<div class="app" onclick="showPopup({ img: 'yono_rummy.jpg', name: 'YONO RUMMY', rating: 4.4, bonus: 30, downloads: '10M+', link: 'https://yonorummyg.com?code=TQJPFHAM2TH&t=1745498673' })">
-  <img src="yono_rummy.jpg" alt="YONO Rummy">
-  <h3>YONO RUMMY</h3>
-  <p>Get ₹30 Bonus</p>
-</div>
-
-<div class="app" onclick="showPopup({ img: 'jaiho_spin.jpg', name: 'JAIHO SPIN', rating: 4.2, bonus: 25, downloads: '10M+', link: 'https://jaihospin4.com?code=7TA8XTHY3MN&t=1745498776' })">
-  <img src="jaiho_spin.jpg" alt="Jaiho Spin">
-  <h3>JAIHO SPIN</h3>
-  <p>Get ₹25 Bonus</p>
-</div>
-
-<div class="app" onclick="showPopup({ img: 'ind_bingo.jpg', name: 'IND BINGO', rating: 4.1, bonus: 30, downloads: '10M+', link: 'https://bingo91.vip?code=XU7QX913NFS&t=1745499112' })">
-  <img src="ind_bingo.jpg" alt="IND BINGO">
-  <h3>IND BINGO</h3>
-  <p>Get ₹30 Bonus</p>
-</div>
-
-<div class="app" onclick="showPopup({ img: 'yono_arcade.jpg', name: 'YONO ARCADE', rating: 4.5, bonus: 40, downloads: '10M+', link: 'https://yonoofficial.com?code=F559HGJK4UB&t=1745499305' })">
-  <img src="yono_arcade.jpg" alt="YONO ARCADE">
-  <h3>YONO ARCADE</h3>
-  <p>Get ₹40 Bonus</p>
-</div>
-
-<div class="app" onclick="showPopup({ img: 'yono_slots.jpg', name: 'YONO SLOTS', rating: 4.3, bonus: 30, downloads: '10M+', link: 'https://www.yonoslotsc.com?code=PJBN43T298M&t=1746011590' })">
-  <img src="yono_slots.jpg" alt="YONO SLOTS">
-  <h3>YONO SLOTS</h3>
-  <p>Get ₹30 Bonus</p>
-</div>
       
             
-      <div class="app">
+      <div class="app"onclick="showPopup({ img: 'spin_crush.jpg', name: 'SPIN CRUSH', rating: 4.6, bonus: 40, downloads: '10M+', link: 'https://2shisgjsqawwhsagui7c.Safelyearnmillionsbysharingonepersonaqfxzqyfw.com?code=ADE7X99JX92&t=1745498414' })">
         <img src="spin_crush.jpg" alt="Spin Crush">
         <div class="app-info"><strong>SPIN CRUSH</strong>10M+ | Bonus ₹40</div>
         <a class="download" href="https://2shisgjsqawwhsagui7c.Safelyearnmillionsbysharingonepersonaqfxzqyfw.com?code=ADE7X99JX92&t=1745498414">Download</a>
@@ -328,7 +288,20 @@ button, button:focus, button:active {
     <br>
     <p>गेम खेलते समय हमेशा सतर्क रहें। पैसे का निवेश सोच-समझकर करें। योनो गेम्स किसी भी प्रकार के नुकसान के लिए जिम्मेदार नहीं है। खेल को मनोरंजन के रूप में लें और अपनी वित्तीय सीमाओं का ध्यान रखें।</p>
   </div>
-
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup()">&times;</span>
+    <img id="popup-img" src="" alt="">
+    <h2 id="popup-name"></h2>
+    <p><strong>Bonus:</strong> ₹<span id="popup-bonus"></span></p>
+    <p><strong>Downloads:</strong> <span id="popup-downloads"></span></p>
+    <p><strong>Rating:</strong>
+      <span id="popup-rating"></span>
+      <span class="stars" id="popup-stars"></span>
+    </p>
+    <a id="popup-link" href="" target="_blank" class="popup-button">Download Now</a>
+  </div>
+</div>
   <script>
     function showSection(section) {
       document.getElementById('home-section').style.display = (section === 'home') ? 'block' : 'none';
