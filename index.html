@@ -232,7 +232,17 @@ button, button:focus, button:active {
   <div id="home-section">
     <div class="app-container">
 
-      
+        <!-- 1) Popup Overlay: सबसे ऊपर -->
+  <div id="popupOverlay" class="popup-overlay" onclick="closePopup()">
+    <div class="popup-content" onclick="event.stopPropagation()">
+      <img id="popup-img" src="" alt="App Icon">
+      <h2 id="popup-title">App Name</h2>
+      <div class="stars" id="popup-stars">★★★★☆</div>
+      <p>Bonus: ₹<span id="popup-bonus">0</span></p>
+      <p>Downloads: <span id="popup-downloads">0</span></p>
+      <a id="popup-download" class="popup-download" href="#" target="_blank">Download Now</a>
+    </div>
+  </div>
             
       <div class="app" onclick="showPopup({ img: 'spin_crush.jpg', name: 'SPIN CRUSH', rating: 4.6, bonus: 40, downloads: '10M+', link: 'https://2shisgjsqawwhsagui7c.Safelyearnmillionsbysharingonepersonaqfxzqyfw.com?code=ADE7X99JX92&t=1745498414' })">
         <img src="spin_crush.jpg" alt="Spin Crush">
@@ -299,17 +309,7 @@ button, button:focus, button:active {
     <br>
     <p>गेम खेलते समय हमेशा सतर्क रहें। पैसे का निवेश सोच-समझकर करें। योनो गेम्स किसी भी प्रकार के नुकसान के लिए जिम्मेदार नहीं है। खेल को मनोरंजन के रूप में लें और अपनी वित्तीय सीमाओं का ध्यान रखें।</p>
   </div>
-  <!-- Popup -->
-  <div id="popup-overlay" class="popup-overlay">
-    <div class="popup-content">
-      <img id="popup-img" src="" alt="App Icon">
-      <h2 id="popup-title">App Name</h2>
-      <p class="stars" id="popup-stars">★★★★☆</p>
-      <p id="popup-bonus">Bonus: ₹<span id="popup-bonus-amount">0</span></p>
-      <p id="popup-downloads">Downloads: <span id="popup-download-count">0</span></p>
-      <a id="popup-download" class="popup-download" href="#" target="_blank">Download Now</a>
-    </div>
-  </div>
+ 
   
   <script>
     function showSection(section) {
@@ -327,6 +327,7 @@ button, button:focus, button:active {
     window.onload = function() {
       showSection('home');
     };
+    
 function showPopup(app) {
       // Set popup content dynamically
       document.getElementById('popup-img').src = app.img;
