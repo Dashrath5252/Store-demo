@@ -132,7 +132,68 @@ button, button:focus, button:active {
   border: none !important;
   -webkit-tap-highlight-color: transparent !important;
 }
-    
+    .popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  background-color: #004d00;
+  border: 3px solid #ffe600;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  max-width: 320px;
+  width: 90%;
+  box-shadow: 0 0 20px yellow;
+}
+
+.popup-content img {
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
+  border: 3px solid #fff;
+  margin-bottom: 15px;
+}
+
+.popup-content h2 {
+  margin: 10px 0;
+  font-size: 1.5em;
+  color: #ffe600;
+}
+
+.popup-content .stars {
+  color: gold;
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+.popup-download {
+  display: inline-block;
+  background-color: #ffe600;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 1.1em;
+  margin-top: 15px;
+  transition: 0.3s;
+}
+
+.popup-download:hover {
+  background-color: #ffcc00;
+  transform: scale(1.1);
+}
   </style>
 </head>
 
@@ -158,7 +219,48 @@ button, button:focus, button:active {
 
   <div id="home-section">
     <div class="app-container">
+      
+<div class="app" onclick="showPopup({ img: 'spin_crush.jpg', name: 'SPIN CRUSH', rating: 4.6, bonus: 40, downloads: '10M+', link: 'https://2shisgjsqawwhsagui7c.Safelyearnmillionsbysharingonepersonaqfxzqyfw.com?code=ADE7X99JX92&t=1745498414' })">
+  <img src="spin_crush.jpg" alt="Spin Crush">
+  <h3>SPIN CRUSH</h3>
+  <p>Get ₹40 Bonus</p>
+</div>
 
+<div class="app" onclick="showPopup({ img: 'teen_patti_master.jpg', name: 'TEEN PATTI MASTER', rating: 4.3, bonus: 40, downloads: '10M+', link: 'https://www.earntp.com/m/l34ii' })">
+  <img src="teen_patti_master.jpg" alt="Teen Patti Master">
+  <h3>TEEN PATTI MASTER</h3>
+  <p>Get ₹40 Bonus</p>
+</div>
+
+<div class="app" onclick="showPopup({ img: 'yono_rummy.jpg', name: 'YONO RUMMY', rating: 4.4, bonus: 30, downloads: '10M+', link: 'https://yonorummyg.com?code=TQJPFHAM2TH&t=1745498673' })">
+  <img src="yono_rummy.jpg" alt="YONO Rummy">
+  <h3>YONO RUMMY</h3>
+  <p>Get ₹30 Bonus</p>
+</div>
+
+<div class="app" onclick="showPopup({ img: 'jaiho_spin.jpg', name: 'JAIHO SPIN', rating: 4.2, bonus: 25, downloads: '10M+', link: 'https://jaihospin4.com?code=7TA8XTHY3MN&t=1745498776' })">
+  <img src="jaiho_spin.jpg" alt="Jaiho Spin">
+  <h3>JAIHO SPIN</h3>
+  <p>Get ₹25 Bonus</p>
+</div>
+
+<div class="app" onclick="showPopup({ img: 'ind_bingo.jpg', name: 'IND BINGO', rating: 4.1, bonus: 30, downloads: '10M+', link: 'https://bingo91.vip?code=XU7QX913NFS&t=1745499112' })">
+  <img src="ind_bingo.jpg" alt="IND BINGO">
+  <h3>IND BINGO</h3>
+  <p>Get ₹30 Bonus</p>
+</div>
+
+<div class="app" onclick="showPopup({ img: 'yono_arcade.jpg', name: 'YONO ARCADE', rating: 4.5, bonus: 40, downloads: '10M+', link: 'https://yonoofficial.com?code=F559HGJK4UB&t=1745499305' })">
+  <img src="yono_arcade.jpg" alt="YONO ARCADE">
+  <h3>YONO ARCADE</h3>
+  <p>Get ₹40 Bonus</p>
+</div>
+
+<div class="app" onclick="showPopup({ img: 'yono_slots.jpg', name: 'YONO SLOTS', rating: 4.3, bonus: 30, downloads: '10M+', link: 'https://www.yonoslotsc.com?code=PJBN43T298M&t=1746011590' })">
+  <img src="yono_slots.jpg" alt="YONO SLOTS">
+  <h3>YONO SLOTS</h3>
+  <p>Get ₹30 Bonus</p>
+</div>
       
             
       <div class="app">
@@ -244,7 +346,35 @@ button, button:focus, button:active {
       showSection('home');
     };
 
+// Show Popup Function
+function showPopup({ img, name, rating, bonus, downloads, link }) {
+  document.getElementById("popupImage").src = img;
+  document.getElementById("popupTitle").textContent = name;
+  document.getElementById("popupStars").innerHTML = generateStars(rating);
+  document.getElementById("popupBonus").textContent = "Bonus ₹" + bonus;
+  document.getElementById("popupDownloads").textContent = downloads + "+ Downloads";
+  document.getElementById("popupDownload").href = link;
+  document.getElementById("popupOverlay").style.display = "flex";
+}
 
+// Close Popup
+function closePopup() {
+  document.getElementById("popupOverlay").style.display = "none";
+}
+
+// Star generator
+function generateStars(rating) {
+  const fullStars = Math.floor(rating);
+  const halfStar = rating % 1 >= 0.5 ? 1 : 0;
+  const emptyStars = 5 - fullStars - halfStar;
+  return (
+    '<span style="color: gold;">' +
+    '★'.repeat(fullStars) +
+    (halfStar ? '⯨' : '') +
+    '☆'.repeat(emptyStars) +
+    '</span>'
+  );
+}
       </script>
 </body>
 </html>
