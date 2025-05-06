@@ -316,22 +316,19 @@
     }
 
     function showSection(section) {
-  // Show/Hide correct section
-  document.getElementById('home-section').style.display = (section === 'home') ? 'block' : 'none';
-  document.getElementById('about-section').style.display = (section === 'about') ? 'block' : 'none';
+      document.getElementById('home-section').style.display = section === 'home' ? 'block' : 'none';
+      document.getElementById('about-section').style.display = section === 'about' ? 'block' : 'none';
 
-  // Remove active class from both buttons
-  document.getElementById('homeButton').classList.remove('active');
-  document.getElementById('aboutButton').classList.remove('active');
-
-  // Add active class only to selected button
-  if (section === 'home') {
-    document.getElementById('homeButton').classList.add('active');
-  } else {
-    document.getElementById('aboutButton').classList.add('active');
-  }
+      document.querySelectorAll('.menu-bar button').forEach(btn => btn.classList.remove('active'));
+      if (section === 'home') document.getElementById('homeButton').classList.add('active');
+      else document.querySelectorAll('.menu-bar button')[1].classList.add('active');
     }
-    
+
+    document.getElementById('popup-overlay').addEventListener('click', function(e) {
+      if (e.target === document.getElementById('popup-overlay')) {
+        document.getElementById('popup-overlay').style.display = 'none';
+      }
+    });
   </script>
 </body>
 </html>
