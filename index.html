@@ -16,6 +16,8 @@
   <meta name="keywords" content="YONO Games, gaming apps, Spin Crush, YONO Rummy, Jaiho Spin, Bingo, YONO Arcade, bonuses, download games, mobile gaming, earn money, jaiho 777, Yono 777, Mkm Bet, Neta Vip, Spin 777, Yono Arcade, Yono Vip, Best earning apps, Online earning apps, paisa kaise kamaye, Free Earn Games, Earning games" />
   <meta name="author" content="YONO GAMES" />
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
@@ -208,6 +210,12 @@
       background-color: #ffcc00;
       transform: scale(1.1);
     }
+    
+    .stars i {
+  color: gold;
+  font-size: 1.5em;
+  margin: 0 2px;
+    }
 
     @keyframes scrollRightToLeft {
       0% { transform: translateX(100%); }
@@ -310,15 +318,33 @@
 
   <script>
     function showPopup(app) {
-      document.getElementById('popup-img').src = app.img;
-      document.getElementById('popup-title').innerText = app.name;
-      document.getElementById('popup-stars').innerText = '★'.repeat(Math.round(app.rating)) + '☆'.repeat(5 - Math.round(app.rating));
-      document.getElementById('popup-bonus-amount').innerText = app.bonus;
-      document.getElementById('popup-download-count').innerText = app.downloads;
-      document.getElementById('popup-download').href = app.link;
-      document.getElementById('popup-overlay').style.display = 'flex';
-    }
+  document.getElementById('popup-img').src = app.img;
+  document.getElementById('popup-title').innerText = app.name;
+  document.getElementById('popup-bonus-amount').innerText = app.bonus;
+  document.getElementById('popup-download-count').innerText = app.downloads;
+  document.getElementById('popup-download').href = app.link;
 
+  // Generate star rating
+  const starsContainer = document.getElementById('popup-stars');
+  const rating = app.rating;
+  starsContainer.innerHTML = '';
+
+  const fullStars = Math.floor(rating);
+  const halfStar = (rating % 1) >= 0.5 ? 1 : 0;
+  const emptyStars = 5 - fullStars - halfStar;
+
+  for (let i = 0; i < fullStars; i++) {
+    starsContainer.innerHTML += '<i class="fas fa-star"></i>';
+  }
+  if (halfStar) {
+    starsContainer.innerHTML += '<i class="fas fa-star-half-alt"></i>';
+  }
+  for (let i = 0; i < emptyStars; i++) {
+    starsContainer.innerHTML += '<i class="far fa-star"></i>';
+  }
+
+  document.getElementById('popup-overlay').style.display = 'flex';
+    }
     function showSection(section) {
     // Sections show/hide
     document.getElementById('home-section').style.display = (section === 'home') ? 'block' : 'none';
