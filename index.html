@@ -212,12 +212,22 @@
       background-color: #ffcc00;
       transform: scale(1.1);
     }
-    .stars i {
-  color: #FFD700; /* Realistic gold */
-  font-size: 1.5em;
+    .star {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background-image: url('star.png');
+  background-size: cover;
   margin: 0 2px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
-    }
+}
+
+.star.half {
+  clip-path: polygon(0 0, 50% 0, 50% 100%, 0% 100%);
+}
+
+.star.empty {
+  filter: grayscale(100%) brightness(40%);
+}
 
     @keyframes scrollRightToLeft {
       0% { transform: translateX(100%); }
@@ -326,19 +336,19 @@
   document.getElementById('popup-title').innerText = app.name;
   
   const starsContainer = document.getElementById('popup-stars');
-  const rating = app.rating;
-  let starHTML = '';
-  
-  for (let i = 1; i <= 5; i++) {
-    if (rating >= i) {
-      starHTML += '<i class="fas fa-star"></i>';
-    } else if (rating >= i - 0.5) {
-      starHTML += '<i class="fas fa-star-half-alt"></i>';
-    } else {
-      starHTML += '<i class="far fa-star"></i>';
-    }
+const rating = app.rating;
+let starHTML = '';
+
+for (let i = 1; i <= 5; i++) {
+  if (rating >= i) {
+    starHTML += '<span class="star"></span>';
+  } else if (rating >= i - 0.5) {
+    starHTML += '<span class="star half"></span><span class="star empty"></span>';
+  } else {
+    starHTML += '<span class="star empty"></span>';
   }
-  starsContainer.innerHTML = starHTML;
+}
+starsContainer.innerHTML = starHTML;
 
   document.getElementById('popup-bonus-amount').innerText = app.bonus;
   document.getElementById('popup-download-count').innerText = app.downloads;
