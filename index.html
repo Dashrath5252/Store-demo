@@ -222,9 +222,35 @@
 }
 
 .star.half {
-  clip-path: polygon(0 0, 50% 0, 50% 100%, 0% 100%);
+  position: relative;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
 }
 
+.star.half::before,
+.star.half::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  background-image: url('star.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.star.half::before {
+  left: 0;
+  z-index: 2;
+}
+
+.star.half::after {
+  right: 0;
+  left: 50%;
+  filter: grayscale(100%) brightness(40%);
+  z-index: 1;
+}
 .star.empty {
   filter: grayscale(100%) brightness(40%);
 }
