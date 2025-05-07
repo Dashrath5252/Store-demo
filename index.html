@@ -213,15 +213,12 @@
       transform: scale(1.1);
     }
 .star {
-  width: 28px;            /* Increase size */
+  width: 28px; /* increased from 20px */
   height: 28px;
   display: inline-block;
   background-image: url('star.png');
   background-size: cover;
-  margin: 0 1px;          /* Reduce spacing between stars */
-}
-
-.star.half {
+  margin: 0 1px; /* reduced spacing */
   position: relative;
 }
 
@@ -229,7 +226,7 @@
   content: '';
   position: absolute;
   top: 0;
-  right: 0;              /* Show right half */
+  left: 0;
   width: 50%;
   height: 100%;
   background-image: url('star.png');
