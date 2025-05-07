@@ -212,32 +212,36 @@
       background-color: #ffcc00;
       transform: scale(1.1);
     }
-    .star {
-  width: 20px;
-  height: 20px;
+.star {
+  width: 28px;            /* Increase size */
+  height: 28px;
   display: inline-block;
   background-image: url('star.png');
   background-size: cover;
-  margin: 0 2px;
+  margin: 0 1px;          /* Reduce spacing between stars */
 }
 
 .star.half {
   position: relative;
 }
+
 .star.half::before {
   content: '';
   position: absolute;
-  top: 0; left: 0;
+  top: 0;
+  right: 0;              /* Show right half */
   width: 50%;
   height: 100%;
   background-image: url('star.png');
   background-size: cover;
   z-index: 2;
 }
+
 .star.half::after {
   content: '';
   position: absolute;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background-image: url('star.png');
@@ -245,10 +249,10 @@
   filter: grayscale(100%) brightness(40%);
   z-index: 1;
 }
+
 .star.empty {
   filter: grayscale(100%) brightness(40%);
 }
-
     @keyframes scrollRightToLeft {
       0% { transform: translateX(100%); }
       100% { transform: translateX(-100%); }
