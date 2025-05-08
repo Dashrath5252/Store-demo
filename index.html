@@ -250,6 +250,26 @@
 .star.empty {
   filter: grayscale(100%) brightness(40%);
 }
+    
+    .gallery {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+.gallery img {
+  width: 30%;
+  max-width: 120px;
+  height: auto;
+  border-radius: 10px;
+  filter: blur(5px);
+  transition: filter 1s ease-in-out;
+}
+.gallery img.unblur {
+  filter: blur(0);
+}
     @keyframes scrollRightToLeft {
       0% { transform: translateX(100%); }
       100% { transform: translateX(-100%); }
@@ -265,6 +285,20 @@
       .app { width: 95%; }
       .popup-content { padding: 16px; }
     }
+    @keyframes unblurCycle {
+  0%, 30% { filter: blur(0); }
+  33%, 100% { filter: blur(5px); }
+}
+.gallery img:nth-child(1) { animation: unblurCycle 9s infinite; animation-delay: 0s; }
+.gallery img:nth-child(2) { animation: unblurCycle 9s infinite; animation-delay: 3s; }
+.gallery img:nth-child(3) { animation: unblurCycle 9s infinite; animation-delay: 6s; }
+
+@media (max-width: 500px) {
+  .gallery img {
+    width: 30%;
+  }
+}
+    
   </style>
 </head>
 
@@ -344,6 +378,13 @@
       </div>
       </div>
       
+      <div class="gallery">
+      <img src="gallery1.jpg" alt="Gallery 1">
+      <img src="gallery2.jpg" alt="Gallery 2">
+      <img src="gallery3.jpg" alt="Gallery 3">
+    </div>
+    </div>
+    
   </div>
 
     <!-- Popup Overlay Inside Home Section -->
